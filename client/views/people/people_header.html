@@ -1,0 +1,32 @@
+<template name="peopleHeader">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      {{#each months}}       
+      <th class="monthHeader"> 
+        {{ this }}
+      </th>
+      {{/each}} 
+      <th id="add-month">
+        Add month
+      </th>
+    </tr>
+    <tr>
+      <th> 
+        <small>
+          Count:
+        </small>
+      </th> 
+      {{#each months}}       
+      <th class="monthHeader"> 
+        <small>
+          {{ monthCount this}}
+        </small>
+      </th>
+      {{/each}} 
+      <th id="add-month"></th>
+    </tr>
+  </thead>
+</template>
