@@ -2,12 +2,10 @@
   <td>
     {{name}}
   </td>
-  {{#each months}}       
-  <td> 
-    boo
+  {{#each months}}
+  <td id="{{../name}}-{{this}}" class="{{monthClass ../name this}}">
   </td>
-  {{/each}} 
+  {{/each}}
   <td id="add-month">
   </td>
-
 </template>

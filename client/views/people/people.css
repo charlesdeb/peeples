@@ -5,3 +5,12 @@
 .table {
   width: auto;
 }
+
+td.red {
+  color: red;
+  background-color: pink;
+}
+
+.blue {
+  color: blue;
+}
