@@ -3,7 +3,7 @@
     {{name}}
   </td>
   {{#each months}}
-  <td id="{{../name}}-{{this}}" class="{{monthClass ../name this}}">
+  <td class="grid {{monthClass ../name this}}" data-name="{{../name}}" data-month={{this}}>
   </td>
   {{/each}}
   <td id="add-month">
