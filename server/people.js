@@ -1,7 +1,5 @@
-People = new Meteor.Collection('people');
-
 Meteor.methods({
-  addMonth: function(set) {
+  addNewMonth: function(set) {
     People.update({},{$set : set},false,true);
   }
 });
