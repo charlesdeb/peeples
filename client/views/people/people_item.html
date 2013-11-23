@@ -2,10 +2,10 @@
   <td>
     {{name}}
   </td>
-  {{#each months}}
-  <td class="grid {{monthClass ../name this}}" data-name="{{../name}}" data-month={{this}}>
+  {{#each yearMonths}}
+  <td class="grid {{monthClass ../name this}}" data-name="{{../name}}" data-yearmonth={{this}}>
   </td>
   {{/each}}
-  <td id="add-month">
+  <td id="add-year-month">
   </td>
 </template>

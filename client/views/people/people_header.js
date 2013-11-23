@@ -1,7 +1,7 @@
 Template.peopleHeader.helpers({
-  monthCount: function(month) {
+  yearMonthCount: function(yearMonth) {
     query = {}
-    query[month] = true;
+    query[yearMonth] = true;
     return People.find(query).count();
   }
 });
@@ -9,10 +9,9 @@ Template.peopleHeader.helpers({
 Template.peopleHeader.events({
    'click a':function(e) {
      e.preventDefault();
-     lastMonth = '10';
+     lastYearMonth = '10';
      set = {};
-     set[lastMonth] = false;
-     Meteor.call('addMonth', set);
-     //alert('add month');
+     set[lastYearMonth] = false;
+     Meteor.call('addYearMonth', set);
    }
 });

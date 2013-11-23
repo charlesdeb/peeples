@@ -4,9 +4,9 @@
       <th>
         Name
       </th>
-      {{#each months}}       
+      {{#each yearMonths}}       
       <th class="monthHeader"> 
-        {{ this }}
+        {{formatMonth this }}
       </th>
       {{/each}} 
       <th id="add-month">
@@ -16,13 +16,13 @@
     <tr>
       <th> 
         <small>
-          Head count:
+          Head count
         </small>
       </th> 
-      {{#each months}}       
+      {{#each yearMonths}}       
       <th class="monthHeader"> 
         <small>
-          {{ monthCount this}}
+          {{ yearMonthCount this}}
         </small>
       </th>
       {{/each}} 

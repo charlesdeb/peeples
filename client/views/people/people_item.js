@@ -1,9 +1,9 @@
 Template.peopleItem.helpers({
-  monthClass: function(name, month) {
+  monthClass: function(name, yearMonth) {
     criteria = {};
     projection = {};
     criteria['name'] = name;
-    if (People.findOne(criteria)[month] === true ) {
+    if (People.findOne(criteria)[yearMonth] === true ) {
       return "red";
     } else {
       return "blue";
@@ -14,12 +14,12 @@ Template.peopleItem.helpers({
 Template.peopleItem.events({
   'click td.grid':function(e) {
     name = $(e.target).data('name');
-    month = $(e.target).data('month');
+    yearMonth = $(e.target).data('yearmonth');
     criteria = {};
     criteria['name'] = name;
-    value = People.findOne(criteria)[month];
+    value = People.findOne(criteria)[yearMonth];
     set = {};
-    set[month] = !value
+    set[yearMonth] = !value
     People.update(People.findOne(criteria)['_id'], {$set: set} );
     //alert(People.findOne(criteria)['_id']);
   }

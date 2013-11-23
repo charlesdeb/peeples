@@ -1,5 +1,5 @@
 Meteor.methods({
-  addNewMonth: function(set) {
+  addNewYearMonth: function(set) {
     People.update({},{$set : set},false,true);
   }
 });
