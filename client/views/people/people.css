@@ -1,21 +1,21 @@
-.monthHeader {
+th.monthHeader {
   /*font-style: oblique;*/
+  text-align: center;
 }
 
 .table {
   width: auto;
 }
 
-td.red {
-  color: red;
-  background-color: pink;
-}
-
-.blue {
-  color: blue;
+td.grey {
+  background-color: gray;
 }
 
 form#add-person {
   margin: 0px;
   width: 150px;
+}
+
+td.delete-person, td.add-person {
+  border-left: 0px;
 }

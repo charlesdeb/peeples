@@ -4,7 +4,7 @@ Template.peopleItem.helpers({
     projection = {};
     criteria['name'] = name;
     if (People.findOne(criteria)[yearMonth] === true ) {
-      return "red";
+      return "grey";
     } else {
       return "blue";
     }
