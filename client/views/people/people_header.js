@@ -7,11 +7,13 @@ Template.peopleHeader.helpers({
 });
 
 Template.peopleHeader.events({
-   'click a':function(e) {
+   'click #add-month a':function(e) {
      e.preventDefault();
-     lastYearMonth = '10';
+     largestYearMonth = allYearMonths().pop();
+     newYearMonth = nextYearMonth(largestYearMonth);
      set = {};
-     set[lastYearMonth] = false;
-     Meteor.call('addYearMonth', set);
+     set[newYearMonth] = false;
+     //alert('about to call addYearMonth, set = ' + set.toString());
+     Meteor.call('addNewYearMonth', set);
    }
 });
