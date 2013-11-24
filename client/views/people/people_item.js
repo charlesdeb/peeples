@@ -22,5 +22,14 @@ Template.peopleItem.events({
     set[yearMonth] = !value
     People.update(People.findOne(criteria)['_id'], {$set: set});
     //alert(People.findOne(criteria)['_id']);
+  },
+  'click a#delete-person': function(e) {
+    var id = $(e.target).closest('a').data('id');
+    //alert(name);
+    Meteor.call('deletePerson', id, function(error, id) {
+      if (error)
+        return alert(error.reason);
+
+    });
   }
 });

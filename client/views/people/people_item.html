@@ -2,6 +2,11 @@
   <td>
     {{name}}
   </td>
+  <td>
+    <a id="delete-person" data-id="{{_id}}" class="btn btn-danger">
+      <i class="icon-trash icon-white"></i>
+    </a>
+  </td>
   {{#each yearMonths}}
   <td class="grid {{monthClass ../name this}}" data-name="{{../name}}" data-yearmonth={{this}}>
   </td>

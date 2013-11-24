@@ -17,5 +17,8 @@ Meteor.methods({
       name: name
     };
     People.insert(person);
+  },
+  deletePerson: function(id) {
+    People.remove(id);
   }
 });

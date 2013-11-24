@@ -8,11 +8,13 @@ Template.peopleBody.helpers({
 });
 
 Template.peopleBody.events({
-  'click form button': function(e) {
-    var name = $(e.target).parent().find('input[name=name]').val();
+  'click a#add-person': function(e) {
+    var name = $('form#add-person input').val();
     Meteor.call('addPerson', name, function(error, id) {
       if (error)
         return alert(error.reason);
+
+      $('form#add-person input').val("");
     });
   }
 });

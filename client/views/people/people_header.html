@@ -1,31 +1,31 @@
 <template name="peopleHeader">
   <thead>
     <tr>
-      <th>
+      <th colspan="2">
         Name
       </th>
-      {{#each yearMonths}}       
-      <th class="monthHeader"> 
+      {{#each yearMonths}}
+      <th class="monthHeader">
         {{formatMonth this }}
       </th>
-      {{/each}} 
+      {{/each}}
       <th id="add-month">
         <a>Add month</a>
       </th>
     </tr>
     <tr>
-      <th> 
+      <th colspan="2">
         <small>
           Head count
         </small>
-      </th> 
-      {{#each yearMonths}}       
-      <th class="monthHeader"> 
+      </th>
+      {{#each yearMonths}}
+      <th class="monthHeader">
         <small>
           {{ yearMonthCount this}}
         </small>
       </th>
-      {{/each}} 
+      {{/each}}
       <th id="add-month"></th>
     </tr>
   </thead>
