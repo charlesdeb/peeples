@@ -12,7 +12,7 @@ Template.peopleItem.helpers({
 });
 
 Template.peopleItem.events({
-  'click td.grid':function(e) {
+  'click td.grid': function(e) {
     name = $(e.target).data('name');
     yearMonth = $(e.target).data('yearmonth');
     criteria = {};
@@ -20,7 +20,7 @@ Template.peopleItem.events({
     value = People.findOne(criteria)[yearMonth];
     set = {};
     set[yearMonth] = !value
-    People.update(People.findOne(criteria)['_id'], {$set: set} );
+    People.update(People.findOne(criteria)['_id'], {$set: set});
     //alert(People.findOne(criteria)['_id']);
   }
 });

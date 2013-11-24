@@ -8,5 +8,14 @@ Meteor.methods({
         alert(error.reason);
       }
     });
+  },
+  addPerson: function(name) {
+    if (name.length == 0)
+      throw new Meteor.Error(401, "You must supply a name");
+
+    var person = {
+      name: name
+    };
+    People.insert(person);
   }
 });

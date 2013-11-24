@@ -4,4 +4,17 @@
     {{> peopleItem}}
   </tr>
   {{/each}}
+  <tr>
+    <td>
+      <form id="add-person" class="form-inline">
+        <div class="input-append">
+          <input type="text" name="name" placeholder="New Person" class="span8">
+          <button class="btn" type="button">Add</button>
+        </div>
+      </form>
+    </td>
+    <td colspan="{{yearMonthsCount}}"></td>
+    <td></td>
+  </tr>
+
 </template>
