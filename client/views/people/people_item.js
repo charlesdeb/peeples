@@ -25,11 +25,12 @@ Template.peopleItem.events({
   },
   'click a#delete-person': function(e) {
     var id = $(e.target).closest('a').data('id');
+    $( "#dialog-confirm" ).dialog( "open" );
     //alert(name);
-    Meteor.call('deletePerson', id, function(error, id) {
-      if (error)
-        return alert(error.reason);
+    //Meteor.call('deletePerson', id, function(error, id) {
+    //  if (error)
+    //    return alert(error.reason);
 
-    });
+    //});
   }
 });

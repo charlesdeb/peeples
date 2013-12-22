@@ -1,20 +1,21 @@
 if (People.find().count() === 0 ) {
   People.insert({
-    name: 'George Jetson',
-    '1301': true,
-    '1302': true,
-    '1303': false
+    name: 'Dave Wilson',
+    '1312': true,
+    '1401': true,
+    '1402': true,
+    '1403': false
   });
   People.insert({
-    name: 'Peter Pan',
-    '1301': true,
-    '1302': true,
-    '1303': false
+    name: 'Pam Wilson',
+    '1401': true,
+    '1402': true,
+    '1403': false
   });
   People.insert({
-    name: 'Willy Wonka',
-    '1301': true,
-    '1302': false,
-    '1303': true
+    name: 'Charles de Bueger',
+    '1401': true,
+    '1402': false,
+    '1403': true
   });
 }
