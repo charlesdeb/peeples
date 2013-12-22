@@ -8,6 +8,12 @@ Template.peopleItem.helpers({
     } else {
       return "blue";
     }
+  },
+  hideDelete: function(){
+    //alert(_.size(People.find().collection.docs));
+    if (_.size(People.find().collection.docs) <= 1 ) {
+      return "hide";
+    }
   }
 });
 
