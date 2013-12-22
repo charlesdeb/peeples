@@ -13,7 +13,7 @@ Template.peopleItem.helpers({
 
 Template.peopleItem.events({
   'click td.grid': function(e) {
-    name = $(e.target).data('name');
+    var name = $(e.target).data('name');
     yearMonth = $(e.target).data('yearmonth');
     criteria = {};
     criteria['name'] = name;
@@ -24,13 +24,15 @@ Template.peopleItem.events({
     //alert(People.findOne(criteria)['_id']);
   },
   'click a#delete-person': function(e) {
-    var id = $(e.target).closest('a').data('id');
-    $( "#dialog-confirm" ).dialog( "open" );
-    //alert(name);
-    //Meteor.call('deletePerson', id, function(error, id) {
-    //  if (error)
-    //    return alert(error.reason);
-
-    //});
+    var name = $(e.target).closest('tr').attr('id');
+    bootbox.confirm("Are you sure you want to delete '" + name + "'? You can't undo this...", function(result) {
+      if (result) {
+        var id = $(e.target).closest('a').data('id');
+        Meteor.call('deletePerson', id, function(error, id) {
+          if (error)
+            return alert(error.reason);
+        });
+      }
+    });
   }
 });

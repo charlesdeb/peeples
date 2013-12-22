@@ -8,4 +8,4 @@ autopublish
 insecure
 preserve-inputs
 bootstrap
-jquery-ui
+bootboxjs
