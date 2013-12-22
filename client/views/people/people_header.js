@@ -10,6 +10,13 @@ Template.peopleHeader.events({
    'click #add-month a':function(e) {
      e.preventDefault();
      largestYearMonth = allYearMonths().pop();
+     if (largestYearMonth === undefined) {
+       today = new Date();
+       largestYearMonth = (today.getFullYear() + "").substring(2,4) + (pad2(today.getMonth() + 1 ))
+     } else {
+       newYearMonth = nextYearMonth(largestYearMonth);
+     }
+     alert(largestYearMonth);
      newYearMonth = nextYearMonth(largestYearMonth);
      set = {};
      set[newYearMonth] = false;
