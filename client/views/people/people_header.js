@@ -3,8 +3,19 @@ Template.peopleHeader.helpers({
     query = {}
     query[yearMonth] = true;
     return People.find(query).count();
+  },
+  hideHideLink: function() {
+    return "hide";
+  },
+  hideShowLink: function () {
+    if (!hiddenMonths())
+      return "hide";
   }
 });
+
+hiddenMonths = function(){
+  return false;
+};
 
 Template.peopleHeader.events({
    'click #add-month a':function(e) {
@@ -16,7 +27,7 @@ Template.peopleHeader.events({
      } else {
        newYearMonth = nextYearMonth(largestYearMonth);
      }
-     alert(largestYearMonth);
+     //alert(largestYearMonth);
      newYearMonth = nextYearMonth(largestYearMonth);
      set = {};
      set[newYearMonth] = false;

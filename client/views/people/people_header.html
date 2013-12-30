@@ -1,8 +1,11 @@
 <template name="peopleHeader">
   <thead>
     <tr>
-      <th colspan="2">
+      <th colspan>
         Name
+      </th>
+      <th colspan class="showHide">
+        <i class="icon-trash icon-eye-close {{hideHideLink}}"></i><br/>{{showMonthLink}}<i class="icon-trash icon-eye-open {{hideShowLink}}"></i>
       </th>
       {{#each yearMonths}}
       <th class="monthHeader">

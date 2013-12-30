@@ -1,6 +1,12 @@
 th.monthHeader {
-  /*font-style: oblique;*/
   text-align: center;
+}
+
+th.showHide {
+  text-align: right;
+  border-left: 0px;
+  font-size: 10px;
+  font-weight: normal;
 }
 
 .table {

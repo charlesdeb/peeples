@@ -11,7 +11,7 @@ Template.peopleItem.helpers({
   },
   hideDelete: function(){
     //alert(_.size(People.find().collection.docs));
-    if (_.size(People.find().collection.docs) <= 1 ) {
+    if (_.size(People.find().collection.docs) <= 0 ) {
       return "hide";
     }
   }
