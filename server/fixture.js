@@ -20,8 +20,9 @@ if (People.find().count() === 0 ) {
   });
 }
 
-if (Months.find().count === 0 ) {
+if (Months.find().count() === 0 ) {
   months = ['1312','1401','1402','1403'];
   months = _.map(months, function(month){ return {month: month, show: true}})
-  Months.insert(months);
+  console.log(months);
+  _.each(months, function(month){ Months.insert(month)});
 }

@@ -4,7 +4,7 @@ Template.peopleHeader.helpers({
     query[yearMonth] = true;
     return People.find(query).count();
   },
-  hideHideLink: function() {
+  hideHideLink: function(yearMonth) {
     return "hide";
   },
   hideShowLink: function () {
@@ -14,7 +14,8 @@ Template.peopleHeader.helpers({
 });
 
 hiddenMonths = function(){
-  return false;
+  if (Months.find({show: false}).count() > 0)
+    return true;
 };
 
 Template.peopleHeader.events({
