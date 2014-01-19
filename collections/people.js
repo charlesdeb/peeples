@@ -8,6 +8,9 @@ Meteor.methods({
         alert(error.reason);
       }
     });
+    // new code for updating the collection of months
+    var month = Object.keys(set)[0];
+    Months.insert({month: month, show: true});
   },
   addPerson: function(name) {
     if (name.length == 0)
