@@ -1,8 +1,9 @@
 Template.peopleHeader.helpers({
   yearMonthCount: function(yearMonth) {
     query = {};
-    query[yearMonth] = true;
-    return People.find(query).count();
+    var yearMonth_id = Months.findOne({yearMonth: yearMonth})._id
+    query['yearMonth_id'] = yearMonth_id;
+    return PeopleMonths.find(query).count();
   },
   hideHideLink: function(yearMonth) {
     return "hide";
