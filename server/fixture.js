@@ -1,19 +1,19 @@
 if (People.find().count() === 0 ) {
   People.insert({
-    name: 'Dave Wilson',
+    name: 'Wallace Footrot',
     '1312': true,
     '1401': true,
     '1402': true,
     '1403': false
   });
   People.insert({
-    name: 'Pam Wilson',
+    name: 'Dawg',
     '1401': true,
     '1402': true,
     '1403': false
   });
   People.insert({
-    name: 'Charles de Bueger',
+    name: 'Cheeky Hobson',
     '1401': true,
     '1402': false,
     '1403': true
