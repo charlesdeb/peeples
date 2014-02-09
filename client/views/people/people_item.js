@@ -3,10 +3,8 @@ Template.peopleItem.helpers({
     criteria = {};
     projection = {};
     criteria['name'] = name;
-    if (People.findOne(criteria)[yearMonth] === true ) {
-      return "grey";
-    } else {
-      return "blue";
+    if (People.findOne(criteria) && People.findOne(criteria)[yearMonth] === true ) {
+      return " grey";
     }
   },
   hideDelete: function(){
@@ -31,7 +29,7 @@ Template.peopleItem.events({
   },
   'click a#delete-person': function(e) {
     var name = $(e.target).closest('tr').attr('id');
-    bootbox.confirm("Are you sure you want to delete '" + name + "'? You can't undo this...", function(result) {
+    bootbox.confirm("Are you sure you want to delete '" + name + "'? You can't undo this.", function(result) {
       if (result) {
         var id = $(e.target).closest('a').data('id');
         Meteor.call('deletePerson', id, function(error, id) {
