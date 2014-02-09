@@ -1,4 +1,4 @@
-if (People.find().count() === 0 ) {
+if (People.find().count() === 0) {
   People.insert({
     name: 'Wallace Footrot',
     '1312': true,
@@ -20,9 +20,38 @@ if (People.find().count() === 0 ) {
   });
 }
 
-if (Months.find().count() === 0 ) {
-  months = ['1312','1401','1402','1403'];
-  months = _.map(months, function(month){ return {month: month, show: true}})
-//  console.log(months);
-  _.each(months, function(month){ Months.insert(month)});
+if (Months.find().count() === 0) {
+  yearMonths = ['1312', '1401', '1402', '1403'];
+  yearMonths = _.map(yearMonths, function(yearMonth) {
+    return {yearMonth: yearMonth, show: true}
+  })
+  //  console.log(yearMonths);
+  _.each(yearMonths, function(yearMonth) {
+    Months.insert(yearMonth)
+  });
+}
+
+if (PeopleMonths.find().count() === 0) {
+  // get month IDs
+  var month_1312_id = Months.findOne({yearMonth: '1312'})._id;
+  var month_1401_id = Months.findOne({yearMonth: '1401'})._id;
+  var month_1402_id = Months.findOne({yearMonth: '1402'})._id;
+  var month_1403_id = Months.findOne({yearMonth: '1403'})._id;
+
+  var wallace_id = People.findOne({name: 'Wallace Footrot'})._id;
+  var dawg_id = People.findOne({name: 'Dawg'})._id;
+  var cheeky_hobson_id = People.findOne({name: 'Cheeky Hobson'})._id;
+
+  // do wallace
+  PeopleMonths.insert({person_id: wallace_id, yearMonth_id: month_1312_id});
+  PeopleMonths.insert({person_id: wallace_id, yearMonth_id: month_1401_id});
+  PeopleMonths.insert({person_id: wallace_id, yearMonth_id: month_1402_id});
+
+  // do dawg
+  PeopleMonths.insert({person_id: dawg_id, yearMonth_id: month_1401_id});
+  PeopleMonths.insert({person_id: dawg_id, yearMonth_id: month_1402_id});
+
+  // do cheeky
+  PeopleMonths.insert({person_id: cheeky_hobson_id, yearMonth_id: month_1401_id});
+  PeopleMonths.insert({person_id: cheeky_hobson_id, yearMonth_id: month_1403_id});
 }

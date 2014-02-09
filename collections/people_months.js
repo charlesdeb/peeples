@@ -1,0 +1,1 @@
+PeopleMonths = new Meteor.Collection('people_months');

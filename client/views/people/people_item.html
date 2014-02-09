@@ -8,7 +8,10 @@
     </a>
   </td>
   {{#each yearMonths}}
-  <td class="grid{{monthClass ../name this.month}}" data-name="{{../name}}" data-yearmonth={{this.month}}>
+  <td class="grid{{monthClass ../name this.yearMonth}}" data-name="{{../name}}"
+      data-person-id="{{../_id}}"
+      data-yearmonth={{this.yearMonth}}
+      data-yearmonth-id={{this._id}}>
   </td>
   {{/each}}
   <td id="add-year-month">

@@ -10,7 +10,7 @@
       {{#each months}}
       <th class="monthHeader">
         <i class="icon-trash icon-eye-close {{hideHideLink this.month}}"></i>
-        {{formatMonth this.month}}
+        {{formatMonth this.yearMonth}}
       </th>
       {{/each}}
       <th id="add-month">
@@ -26,7 +26,7 @@
       {{#each months}}
       <th class="monthHeader">
         <small>
-          {{ yearMonthCount this.month}}
+          {{ yearMonthCount this.yearMonth}}
         </small>
       </th>
       {{/each}}
