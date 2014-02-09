@@ -10,6 +10,9 @@ Template.peopleHeader.helpers({
   hideShowLink: function () {
     if (!hiddenMonths())
       return "hide";
+  },
+  months: function () {
+    return Months.find();
   }
 });
 
@@ -32,7 +35,6 @@ Template.peopleHeader.events({
      newYearMonth = nextYearMonth(largestYearMonth);
      set = {};
      set[newYearMonth] = false;
-     console.log(set);
      //alert('about to call addYearMonth, set = ' + set.toString());
      Meteor.call('addNewYearMonth', set);
    }

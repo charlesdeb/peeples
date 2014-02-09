@@ -7,10 +7,10 @@
       <th colspan class="showHide">
         <i class="icon-trash icon-eye-open {{hideShowLink}}"></i>
       </th>
-      {{#each yearMonths}}
+      {{#each months}}
       <th class="monthHeader">
-        <i class="icon-trash icon-eye-close {{hideHideLink this}}"></i>
-        {{formatMonth this }}
+        <i class="icon-trash icon-eye-close {{hideHideLink this.month}}"></i>
+        {{formatMonth this.month}}
       </th>
       {{/each}}
       <th id="add-month">
@@ -23,10 +23,10 @@
           Head count
         </small>
       </th>
-      {{#each yearMonths}}
+      {{#each months}}
       <th class="monthHeader">
         <small>
-          {{ yearMonthCount this}}
+          {{ yearMonthCount this.month}}
         </small>
       </th>
       {{/each}}

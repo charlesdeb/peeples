@@ -1,8 +1,8 @@
 Handlebars.registerHelper('yearMonths', function()
 {
-  var answer = allYearMonths();
-  if (answer.length > 0) {
-    return answer;
+  var result = allYearMonths();
+  if (result.count() > 0) {
+    return result;
   } else {
     return ['querying database...'];
   }
