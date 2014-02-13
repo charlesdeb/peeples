@@ -1,22 +1,22 @@
 if (People.find().count() === 0) {
   People.insert({
-    name: 'Wallace Footrot',
-    '1312': true,
-    '1401': true,
-    '1402': true,
-    '1403': false
+    name: 'Wallace Footrot' //,
+//    '1312': true,
+//    '1401': true,
+//    '1402': true,
+//    '1403': false
   });
   People.insert({
-    name: 'Dawg',
-    '1401': true,
-    '1402': true,
-    '1403': false
+    name: 'Dawg' //,
+//    '1401': true,
+//    '1402': true,
+//    '1403': false
   });
   People.insert({
-    name: 'Cheeky Hobson',
-    '1401': true,
-    '1402': false,
-    '1403': true
+    name: 'Cheeky Hobson' //,
+//    '1401': true,
+//    '1402': false,
+//    '1403': true
   });
 }
 

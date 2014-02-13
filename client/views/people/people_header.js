@@ -26,14 +26,14 @@ Template.peopleHeader.events({
   'click #add-month a': function(e) {
     e.preventDefault();
     // largestYearMonth = allYearMonths().pop();
-    largestYearMonth = _.toArray(allYearMonths().collection.docs).pop().month;
+    largestYearMonth = _.toArray(allYearMonths().collection.docs).pop().yearMonth;
     if (largestYearMonth === undefined) {
       today = new Date();
       largestYearMonth = (today.getFullYear() + "").substring(2, 4) + (pad2(today.getMonth() + 1));
     } else {
       newYearMonth = nextYearMonth(largestYearMonth);
     }
-    //alert(largestYearMonth);
+    // console.log('largestYearMonth: ' + largestYearMonth);
     newYearMonth = nextYearMonth(largestYearMonth);
     set = {};
     set[newYearMonth] = false;
