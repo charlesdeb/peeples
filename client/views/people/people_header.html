@@ -4,17 +4,23 @@
       <th colspan>
         Name
       </th>
-      <th colspan class="showHide">
-        <i class="icon-trash icon-eye-open {{hideShowLink}}"></i>
+      <th colspan class="showHide"></th>
+      <th>
+        <a title="earlier" data-id="{{_id}}"
+           class="earlier-month btn btn-mini">
+          <i class="icon-chevron-left icon"></i>
+        </a>
       </th>
       {{#each months}}
       <th class="monthHeader">
-        <i class="icon-trash icon-eye-close {{hideHideLink this.month}}"></i>
         {{formatMonth this.yearMonth}}
       </th>
       {{/each}}
-      <th id="add-month">
-        <a>Add month</a>
+      <th>
+        <a title="later" data-id="{{_id}}"
+           class="later-month btn btn-mini">
+          <i class="icon-chevron-right icon"></i>
+        </a>
       </th>
     </tr>
     <tr>
@@ -23,6 +29,7 @@
           Head count
         </small>
       </th>
+      <th></th>
       {{#each months}}
       <th class="monthHeader">
         <small>
