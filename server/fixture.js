@@ -20,38 +20,42 @@ if (People.find().count() === 0) {
   });
 }
 
+var currentMonth = new Date().getMonth() + 1;
+var currentFullYear = new Date().getFullYear();
+var yearMonth = "" + (currentFullYear - 2000) + pad2(currentMonth);
+// console.log('yearMonth: ' + yearMonth);
+
+var yearMonths = [yearMonth];
+while (yearMonths.length < 15) {
+  yearMonth = taco_peeps.nextYearMonth(yearMonth);
+  yearMonths.push(yearMonth);
+}
+
 if (Months.find().count() === 0) {
-  yearMonths = ['1312', '1401', '1402', '1403'];
   yearMonths = _.map(yearMonths, function(yearMonth) {
     return {yearMonth: yearMonth, show: true}
   })
-  //  console.log(yearMonths);
+  console.log(yearMonths);
+  console.log(yearMonths[12]);
+  yearMonths[12].show = false;
+  yearMonths[13].show = false;
+  yearMonths[14].show = false;
+
   _.each(yearMonths, function(yearMonth) {
     Months.insert(yearMonth)
   });
 }
+// console.log('yearMonth: ' + yearMonth);
 
 if (PeopleMonths.find().count() === 0) {
-  // get month IDs
-  var month_1312_id = Months.findOne({yearMonth: '1312'})._id;
-  var month_1401_id = Months.findOne({yearMonth: '1401'})._id;
-  var month_1402_id = Months.findOne({yearMonth: '1402'})._id;
-  var month_1403_id = Months.findOne({yearMonth: '1403'})._id;
+// get month IDs
+  var last_month_id = Months.findOne({yearMonth: yearMonth})._id;
 
+// get person IDs
   var wallace_id = People.findOne({name: 'Wallace Footrot'})._id;
   var dawg_id = People.findOne({name: 'Dawg'})._id;
   var cheeky_hobson_id = People.findOne({name: 'Cheeky Hobson'})._id;
-
-  // do wallace
-  PeopleMonths.insert({person_id: wallace_id, yearMonth_id: month_1312_id});
-  PeopleMonths.insert({person_id: wallace_id, yearMonth_id: month_1401_id});
-  PeopleMonths.insert({person_id: wallace_id, yearMonth_id: month_1402_id});
-
-  // do dawg
-  PeopleMonths.insert({person_id: dawg_id, yearMonth_id: month_1401_id});
-  PeopleMonths.insert({person_id: dawg_id, yearMonth_id: month_1402_id});
-
-  // do cheeky
-  PeopleMonths.insert({person_id: cheeky_hobson_id, yearMonth_id: month_1401_id});
-  PeopleMonths.insert({person_id: cheeky_hobson_id, yearMonth_id: month_1403_id});
+//
+// do wallace
+  PeopleMonths.insert({person_id: wallace_id, yearMonth_id: last_month_id});
 }

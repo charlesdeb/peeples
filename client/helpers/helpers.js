@@ -1,6 +1,6 @@
-Handlebars.registerHelper('yearMonths', function()
+Handlebars.registerHelper('visibleYearMonths', function()
 {
-  var result = allYearMonths();
+  var result = taco_peeps.allVisibleYearMonths();
   if (result.count() > 0) {
     return result;
   } else {

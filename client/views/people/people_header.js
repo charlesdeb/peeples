@@ -5,19 +5,19 @@ Template.peopleHeader.helpers({
     query['yearMonth_id'] = yearMonth_id;
     return PeopleMonths.find(query).count();
   },
-  hideDeleteMonth: function(yearMonth) {
-    allYearMonthsArray = _.toArray(allYearMonths().collection.docs);
-    firstYearMonth = _.first(allYearMonthsArray).yearMonth;
-    lastYearMonth = _.last(allYearMonthsArray).yearMonth;
-
-    if (yearMonth == firstYearMonth || yearMonth == lastYearMonth) {
-      // do nothing
-    } else {
-      return "hide";
-    }
-  },
-  months: function() {
-    return allYearMonths();
+//  hideDeleteMonth: function(yearMonth) {
+//    allYearMonthsArray = _.toArray(taco_peeps.allYearMonths().collection.docs);
+//    firstYearMonth = _.first(taco_peeps.allYearMonthsArray).yearMonth;
+//    lastYearMonth = _.last(taco_peeps.allYearMonthsArray).yearMonth;
+//
+//    if (yearMonth == firstYearMonth || yearMonth == lastYearMonth) {
+//      // do nothing
+//    } else {
+//      return "hide";
+//    }
+//  },
+  visibleYearMonths: function() {
+    return taco_peeps.allVisibleYearMonths();
   }
 });
 
@@ -29,8 +29,7 @@ hiddenMonths = function() {
 Template.peopleHeader.events({
   'click #add-month a': function(e) {
     e.preventDefault();
-    // largestYearMonth = allYearMonths().pop();
-    largestYearMonth = _.toArray(allYearMonths().collection.docs).pop().yearMonth;
+    largestYearMonth = _.toArray(taco_peeps.allYearMonths().collection.docs).pop().yearMonth;
     if (largestYearMonth === undefined) {
       today = new Date();
       largestYearMonth = (today.getFullYear() + "").substring(2, 4) + (pad2(today.getMonth() + 1));
