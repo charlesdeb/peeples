@@ -3,9 +3,13 @@ Template.peopleBody.helpers({
     return People.find({}, {sort: {name: 1}});
   },
   yearMonthsCount: function() {
-//    console.log('taco_peeps..allYearMonths().length: ' + taco_peeps.allYearMonths().length);
+//    console.log('Object.keys(taco_peeps.allVisibleYearMonths().collection._docs._map).length: ' + Object.keys(taco_peeps.allVisibleYearMonths().collection._docs._map).length);
 //    return taco_peeps.allYearMonths().length;
-    return Object.keys(taco_peeps.allVisibleYearMonths().collection.docs).length
+//    return Object.keys(taco_peeps.allVisibleYearMonths().collection._docs._map).length
+    return Months.find().count();
+  },
+  visibleYearMonthsCount: function() {
+    return Months.find({show: true}).count();
   }
 });
 
