@@ -13,6 +13,10 @@ th.showHide {
   width: auto;
 }
 
+.table td {
+  padding: 4px;
+}
+
 td.grey {
   background-color: gray;
 }
@@ -24,4 +28,8 @@ form#add-person {
 
 td.delete-person, td.add-person {
   border-left: 0px;
+}
+
+body {
+  font-size: 12px;
 }
